@@ -1,19 +1,20 @@
 # Styles
 
-const text_formats = [
-  :black   => "\e[30m",
-  :red     => "\e[31m",
-  :green   => "\e[32m",
-  :yellow  => "\e[33m",
-  :blue    => "\e[34m",
-  :magenta => "\e[35m",
-  :cyan    => "\e[36m",
-  :white   => "\e[37m",
-  :reset   => "\e[0m",
-  :bold    => "\e[1m",
-  :underline => "\e[4m",
-  :blink     => "\e[5m",
-  :negative  => "\e[7m"]
+const text_formats = Dict([
+  (:black   , "\e[30m"),
+  (:red     , "\e[31m"),
+  (:green   , "\e[32m"),
+  (:yellow  , "\e[33m"),
+  (:blue    , "\e[34m"),
+  (:magenta , "\e[35m"),
+  (:cyan    , "\e[36m"),
+  (:white   , "\e[37m"),
+  (:reset   , "\e[0m"),
+  (:bold    , "\e[1m"),
+  (:underline , "\e[4m"),
+  (:blink     , "\e[5m"),
+  (:negative  , "\e[7m")
+  ])              
 
 function with_output_format(f::Function, formats::Vector{Symbol}, io::IO, args...)
   Base.have_color && for format in formats
